@@ -22,6 +22,7 @@
 - Cadastral lot numbers and boundaries as separate toggles; right-click for lot number, elevation and full address
 - Selected-parcel list with totals; searched parcel in red, clicked parcels in purple; save and restore parcel groups; remove only the rows you pick
 - Sunlight and solar yield: 20 km horizon from Copernicus 30 m surface data, 1-minute sun tracking, NASA POWER daily weather (5 years), snow cover, module temperature coefficient, panel tilt / azimuth / row spacing with inter-row shading, monthly and hourly charts
+- Nearby trees from ESA WorldCover land cover, with tree height and clearing distance set separately for east, south and west
 - Zoning layers: urban, management, agricultural/forest, nature conservation, farmland promotion, development promotion
 - Distance, slope and bearing between two points; drag to draw a radius circle; spot elevation
 - Satellite map + street view split screen that follows your clicks
@@ -43,4 +44,4 @@ sudo apt install ./mapiyagi_*ubuntu24.04_amd64.deb      # Ubuntu 24.04
 ```
 
 Uses Korean national map and cadastral data (VWorld, National Spatial Data Platform). An internet connection is required.
-Terrain (Copernicus GLO-30, ESA) and weather (NASA POWER) for the solar analysis are downloaded once and kept.
+Terrain (Copernicus GLO-30, ESA), weather (NASA POWER) and land cover (ESA WorldCover 2021, CC BY 4.0) for the solar analysis are downloaded once and kept.
