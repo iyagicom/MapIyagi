@@ -52,14 +52,14 @@
 
 | 내 시스템 | 받을 파일 |
 |---|---|
-| 우분투 24.04 | `mapiyagi_*~ubuntu24.04_amd64.deb` |
-| 우분투 26.04 | `mapiyagi_*~ubuntu26.04_amd64.deb` |
+| 우분투 24.04 | `mapiyagi_*ubuntu24.04_amd64.deb` |
+| 우분투 26.04 | `mapiyagi_*ubuntu26.04_amd64.deb` |
 | 페도라 | `mapiyagi-*.x86_64.rpm` |
 | 아치 | `mapiyagi-*.pkg.tar.zst` |
 | 그 밖의 리눅스 | `mapiyagi-*.AppImage`(설치 없이 실행) 또는 `mapiyagi-*-linux-x64.zip` |
 
 ```bash
-sudo apt install ./mapiyagi_*~ubuntu24.04_amd64.deb      # 우분투 24.04
+sudo apt install ./mapiyagi_*ubuntu24.04_amd64.deb      # 우분투 24.04
 ```
 
 대한민국 지도·지적 자료(브이월드, 국토정보플랫폼)를 씁니다. 인터넷 연결이 필요합니다.

@@ -32,14 +32,14 @@
 
 | Your system | File to pick |
 |---|---|
-| Ubuntu 24.04 | `mapiyagi_*~ubuntu24.04_amd64.deb` |
-| Ubuntu 26.04 | `mapiyagi_*~ubuntu26.04_amd64.deb` |
+| Ubuntu 24.04 | `mapiyagi_*ubuntu24.04_amd64.deb` |
+| Ubuntu 26.04 | `mapiyagi_*ubuntu26.04_amd64.deb` |
 | Fedora | `mapiyagi-*.x86_64.rpm` |
 | Arch | `mapiyagi-*.pkg.tar.zst` |
 | Any other Linux | `mapiyagi-*.AppImage` (run without installing) or `mapiyagi-*-linux-x64.zip` |
 
 ```bash
-sudo apt install ./mapiyagi_*~ubuntu24.04_amd64.deb      # Ubuntu 24.04
+sudo apt install ./mapiyagi_*ubuntu24.04_amd64.deb      # Ubuntu 24.04
 ```
 
 Uses Korean national map and cadastral data (VWorld, National Spatial Data Platform). An internet connection is required.
