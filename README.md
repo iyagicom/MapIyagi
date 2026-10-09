@@ -1,40 +1,66 @@
-# MapIyagi
+# 맵이야기 (MapIyagi)
 
-**A map for looking at land in Korea — cadastral parcels, zoning, sunlight hours and street view on one 3D VWorld map. For land surveys and solar site hunting.**
+**땅을 보는 지도 — 브이월드 3D 지도 위에 땅그림(지적도)·땅가름(용도지역)·햇볕·불셈(태양광 발전량)·로드뷰를 한 화면에. 땅 조사와 태양광 부지 찾기에.**
 
-[English](README.md) · [한국어](README_ko.md)
+[한국어](README.md) · [English](README_en.md)
 
-![MapIyagi](mapiyagi.png)
+![맵이야기](mapiyagi.png)
 
-## Why MapIyagi?
+## 왜 맵이야기인가
 
-- **Click parcels, get the area.** Every parcel you click is added to a list with lot number, land category, area (m²) and zone — with a running **total in m² and pyeong**.
-- **See the rules that actually apply.** Zones are looked up per parcel from the official land-use plan, and the one that really restricts the land is shown first.
-- **Sunlight hours for solar sites.** Average daily sunlight for each selected parcel, taking the surrounding mountains and terrain into account — the same method solar site-analysis tools use.
-- **Look without driving there.** Street view opens side by side with the map and searches nearby roads, even for rural parcels with no road of their own.
-- **Real terrain in 3D.** Slopes and ridgelines on an elevation-aware 3D map.
+- **땅을 눌러 모으면 넓이가 바로.** 누를 때마다 "고른땅" 목록에 쌓이고, 땅매김(지번)·땅쓰임(지목)·넓이(㎡)·햇볕·땅가름과 **모두 넓이 + 평수**가 계속 더해집니다.
+- **이 땅에 태양광을 놓으면 전기가 얼마나 나오는지.** 20km 둘레 산과 숲이 해를 가리는 것을 1년 동안 1분마다 따지고, 그 자리의 최근 5년 날씨·눈·판 온도까지 넣어 **kWh/kWp** 로 셈합니다. 실제 발전소 3년 실측과 1% 안팎으로 맞췄습니다.
+- **동쪽 산 때문에 해가 늦게 뜨는 땅이 보입니다.** 달마다·시간마다 햇볕과 불셈이 그림으로 나와, 좋은 자리인지 한눈에 압니다.
+- **실제 규제가 보입니다.** 리·동과 땅가름을 토지이용계획과 같은 기준으로 땅마다 찾습니다. 농림지역이면서 농업진흥구역이면 실제 규제인 **농업진흥**을 보여 줍니다.
+- **가 보지 않고 봅니다.** 로드뷰를 켜면 지도와 반반으로 나뉘고, 길이 없는 시골 땅도 몇백 미터 떨어진 길에서 찾아 보여 줍니다.
 
-## Features
+## 기능
 
-- VWorld 3D map; search by lot address, road address or place; recent searches; my location
-- Cadastral lot numbers and boundaries as separate toggles; right-click for lot number, elevation and full address
-- Selected-parcel list with totals; save and restore parcel groups
-- Zoning layers: urban, management, agricultural/forest, nature conservation, farmland promotion, development promotion
-- Solar sunlight analysis (12-month average, clear-sky theoretical hours)
-- Distance and slope between two points, spot elevation
-- Satellite map + street view split screen that follows your clicks
+### 지도
+- 브이월드 3D 지도(실제 치높이 들어간 지형), 살이곳(주소)·곳(장소) 찾기
+- 요즘찾은 100건, 내 자리, 되돌리기
 
-## Download
+### 땅그림(지적도)·고른땅
+- **땅그림**(땅매김 글씨) / **이음땅**(이어진 경계선)을 따로 켜고 끄기
+- 땅에서 500m 안쪽은 땅매김을 모두 적고, 작은 땅은 글씨를 작게
+- 우클릭 → 그 자리 땅매김·치높, 시군구부터 리까지 붙은 살이곳 베끼기
+- 고른땅 목록: 땅매김·땅쓰임·넓이(토지대장)·햇볕·땅가름, 모두 넓이와 평수
+- 주소로 찾은 땅은 **빨강**, 지도에서 고른 땅은 **보라**
+- 고른 땅 묶음을 이름 붙여 **담기·불러오기**, 표에서 고른 줄만 **빼기**
 
-**[⬇ Latest release](https://github.com/iyagicom/MapIyagi/releases/latest)**
+### 햇볕 (태양광 부지)
+- **20km 둘레 산·숲**(Copernicus 30m 표면 높이)을 360° 1°마다 보고, 1년을 1분마다 해와 견줌
+- 땅 안을 10m 간격으로 재어 가장 나쁜 곳·좋은 곳까지
+- 햇볕 칸에 마우스를 올리면 뜨는 창:
+  - **햇볕** — 1~12월 하루 햇볕과 가림 없을 때
+  - **불셈** — 1~12월 하루 kWh/kWp, 판 온도, 가림·눈·온도로 잃는 몫, 이 땅에서 한 해 나올 MWh
+  - **판 불셈** — 판에 든 빛 시간에 판 온도 몫(−0.26%/℃)을 더하고 뺀 값
+  - **달마다 숫자표**, **시간별 불셈**(춘분·하지·동지·오늘)
+- 판 놓는 방법을 바꿀 수 있음: **판 기울기**(보통 15°), **판 쪽**(남 180°), **입사각**(줄 간격 기준 해 높이, 보통 25°) — 앞줄 판 그림자까지 셈
 
-| Your system | File to pick |
+### 땅가름(용도구역)
+- 도시·관리·농림·자연환경보전지역, 농업진흥지역, 개발진흥지구를 색으로
+
+### 재기·로드뷰
+- 거리재기: 두 점의 거리·기울기·쪽, **누른 채 끌면 반지름 원**(손을 떼면 남음)
+- 치높: 누른 곳의 높이를 핀으로
+- 위성지도 + 로드뷰 반반 화면, 바라보는 쪽 표시, 지도·찾기·고른땅을 따라 움직임
+
+## 받기
+
+**[⬇ 새 판 받기](https://github.com/iyagicom/MapIyagi/releases/latest)**
+
+| 내 시스템 | 받을 파일 |
 |---|---|
-| Ubuntu · Debian | `.deb` |
-| Any other Linux | `.AppImage` (run without installing) or `.zip` |
+| 우분투 24.04 | `mapiyagi_*~ubuntu24.04_amd64.deb` |
+| 우분투 26.04 | `mapiyagi_*~ubuntu26.04_amd64.deb` |
+| 페도라 | `mapiyagi-*.x86_64.rpm` |
+| 아치 | `mapiyagi-*.pkg.tar.zst` |
+| 그 밖의 리눅스 | `mapiyagi-*.AppImage`(설치 없이 실행) 또는 `mapiyagi-*-linux-x64.zip` |
 
 ```bash
-sudo apt install ./mapiyagi_*_amd64.deb      # Ubuntu / Debian
+sudo apt install ./mapiyagi_*~ubuntu24.04_amd64.deb      # 우분투 24.04
 ```
 
-Uses Korean national map and cadastral data (VWorld, National Spatial Data Platform). An internet connection is required.
+대한민국 지도·지적 자료(브이월드, 국토정보플랫폼)를 씁니다. 인터넷 연결이 필요합니다.
+햇볕 셈에 쓰는 땅 높이(Copernicus GLO-30, ESA)와 날씨(NASA POWER)는 처음 한 번 받아 담아 둡니다.
